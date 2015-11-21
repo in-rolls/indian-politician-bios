@@ -4,7 +4,8 @@ Biographical data of national, state and some local elections candidates from [a
 
 ### Data on Indian MPs from the 'National Portal of India'
 
-Data on Indian MPs serving the [Lok Sabha](http://www.archive.india.gov.in/govt/loksabha.php?alpha=all) and the [Rajya Sabha](http://www.archive.india.gov.in/govt/rajyasabha.php?alpha=all). The data were scraped in June, 2014 and November, 2015.  
+Data on Indian MPs serving the [Lok Sabha](http://www.archive.india.gov.in/govt/loksabha.php?alpha=all) and the [Rajya Sabha](http://www.archive.india.gov.in/govt/rajyasabha.php?alpha=all). The data were scraped in June, 2014 and November, 2015.    
+
     * [15th Lok Sabha](data/loksabha_2014.csv) [Scraped June, 2014]
     * [16th Lok Sabha](data/loksabha_2015.csv) [Scraped November, 2015]
     * [Rajya Sabha 2014](data/rajyasabha_2014.csv)  [Scraped June, 2014]
