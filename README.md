@@ -10,25 +10,20 @@ The data from the 15th Lok Sabha and members in Rajya Sabha as of June, 2014 was
 
 To use the scripts, download them to your computer. The scripts require `Python 3.x` and `BeautifulSoup 4` to run. The package dependency is listed in [get_data/requirements.txt](get_data/requirements.txt). Once you have installed the dependencies, you can run the scripts.
 
-**[archive.india.gov](http://www.archive.india.gov.in/govt/)**
-
-1. To download web pages containing the information, run [scrape_indian_gov.py](scripts/scrape_indian_gov.py): 
-
+1. **archive.india.gov**: Data on Indian MPs serving the **Lok Sabha** and the **Rajya Sabha**
+    * To download web pages containing the information, run [scrape_indian_gov.py](scripts/scrape_indian_gov.py): 
 ```
 python scrape_indian_gov.py
 ```
-
 The HTML files will be saved in `./rajyasabha` and `./loksabha`
-
-2. To parse and extract information from the HTML files, run [extract_indian_gov.py](scripts/extract_indian_gov.py)
+    * To parse and extract information from the HTML files, run [extract_indian_gov.py](scripts/extract_indian_gov.py)
 
 ```
 python extract_indian_gov.py <dir>
 ```
-
 The script outputs a CSV file, saving it as `dir-out.csv`
 
-**[myneta.info](http://www.myneta.info/)**
+2. **myneta.info**
 
 ###  Data
 
