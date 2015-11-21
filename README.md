@@ -1,6 +1,6 @@
 ## Biographical Data of Indian Politicians
 
-Biographical data of national, state and some local elections candidates from [archive.india.gov.in](https://www.archive.india.gov.in/) and [myneta.info](http://www.myneta.info/) along with scripts for retrieving the data. 
+Biographical data of national, state and some local elections candidates from [archive.india.gov.in](https://www.archive.india.gov.in/) and [myneta.info](http://www.myneta.info/) along with scripts for retrieving the data. The data from the 15th Lok Sabha and members in Rajya Sabha as of June, 2014 was used to produce this small note: [(No) Missing daughters of Indian Politicians](http://gbytes.gsood.com/2014/06/29/missing-daughters-of-indian-politicians/).
 
 ### Data on Indian MPs from the 'National Portal of India'
 
@@ -31,10 +31,6 @@ To get the data, download the scripts in the [get_data/archive_india_gov](get_da
 
 Select biographical data of national, state and some local elections candidates from [myneta.info](http://myneta.info). The data were scraped in November, 2015.   
 * [All the candidates](data/myneta_data.csv)
-
-### Applications
-
-1. The data from the 15th Lok Sabha and members in Rajya Sabha as of June, 2014 was used to produce this small note: [(No) Missing daughters of Indian Politicians](http://gbytes.gsood.com/2014/06/29/missing-daughters-of-indian-politicians/)
 
 ### License
 Scripts, figures, and writing are released under [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). 
