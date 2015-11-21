@@ -3,7 +3,7 @@
 Data for MPs serving in the **Lok Sabha** (Lower House) and the **Rajya Sabha** (Upper House). The data were scraped from [archive.india.gov](http://www.archive.india.gov.in/govt/). 
 
 ### Application
-The data from the 15th Lok Sabha and members in Rajya Sabha as of July, 2014 was used to produce this small note: [(No) Missing daughters of Indian Politicians](http://gbytes.gsood.com/2014/06/29/missing-daughters-of-indian-politicians/)
+The data from the 15th Lok Sabha and members in Rajya Sabha as of June, 2014 was used to produce this small note: [(No) Missing daughters of Indian Politicians](http://gbytes.gsood.com/2014/06/29/missing-daughters-of-indian-politicians/)
 
 ### Get the Data
 
@@ -27,9 +27,9 @@ The script outputs a CSV file, saving it as `dir-out.csv`
 
 ###  Data
 
-* [15th Lok Sabha](data/loksabha_15.csv) [Scraped July, 2014]
-* [16th Lok Sabha](data/loksabha_16.csv) [Scraped November, 2015]
-* [Rajya Sabha 2014](data/rajyasabha_2014.csv)  [Scraped July, 2014]
+* [15th Lok Sabha](data/loksabha_2014.csv) [Scraped June, 2014]
+* [16th Lok Sabha](data/loksabha_2015.csv) [Scraped November, 2015]
+* [Rajya Sabha 2014](data/rajyasabha_2014.csv)  [Scraped June, 2014]
 * [Rajya Sabha 2015](data/rajyasabha_2015.csv)  [Scraped November, 2015]
 
 ### License
