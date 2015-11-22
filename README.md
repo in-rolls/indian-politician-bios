@@ -2,6 +2,18 @@
 
 Biographical data of national, state and some local elections candidates from [archive.india.gov.in](https://www.archive.india.gov.in/) and [myneta.info](http://www.myneta.info/) along with scripts for retrieving the data. The data from the 15th Lok Sabha and members in Rajya Sabha as of June, 2014 was used to produce this small note: [(No) Missing daughters of Indian Politicians](http://gbytes.gsood.com/2014/06/29/missing-daughters-of-indian-politicians/). While data on all political candidates in national, state and some local elections from myNeta was used for the note ...
 
+### Table of Contents
+* [Data on Indian MPs from the 'National Portal of India'](#data-on-indian-mps-from-the-national-portal-of-india)  
+  * [Get the Data](#get-the-data)
+  * [Data](#data)
+  * [Analysis and Write-up](#analysis)
+* [Data on All Candidates from myNeta](#data-on-all-candidates-from-myneta)
+  * [Get the Data](#get-the-data-1)
+  * [Data](#data-1)
+  * [Analysis and Write-up](#analysis-1) 
+
+----
+
 ### Data on Indian MPs from the 'National Portal of India'
 
 Data on Indian MPs serving the [Lok Sabha](http://www.archive.india.gov.in/govt/loksabha.php?alpha=all) and the [Rajya Sabha](http://www.archive.india.gov.in/govt/rajyasabha.php?alpha=all). 
@@ -33,6 +45,9 @@ The data were scraped in June, 2014 and November, 2015.
 
 **Note:** In 2015, the list of Rajya Sabha members on the site appears to differ slightly from the [list](data/rajyasabha_rajyasabha_in_nov_2015.csv) posted on [http://rajyasabha.nic.in/](http://rajyasabha.nic.in/).  
 
+#### Analysis 
+* [Script](analysis/indiamps.R)
+
 ### Data on All Candidates from myNeta
 
 Select biographical data of national, state and some local elections candidates from [myneta.info](http://myneta.info). The data were scraped in November, 2015.  
@@ -55,6 +70,9 @@ To get the data, download the scripts in the [get_data/myneta_info](get_data/myn
 
 #### Data  
 * [All the candidates](data/myneta_data.csv)
+
+#### Analysis 
+* [Script](analysis/indian_netas.R)
 
 ### License
 Scripts, figures, and writing are released under [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). 
