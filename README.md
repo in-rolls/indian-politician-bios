@@ -1,6 +1,6 @@
 ## Biographical Data of Indian Politicians
 
-Biographical data of national, state and some local elections candidates from [archive.india.gov.in](https://www.archive.india.gov.in/) and [myneta.info](http://www.myneta.info/) along with scripts for retrieving the data. The data from the 15th Lok Sabha and members in Rajya Sabha as of June, 2014 was used to produce this small note: [(No) Missing daughters of Indian Politicians](http://gbytes.gsood.com/2014/06/29/missing-daughters-of-indian-politicians/). While data on all political candidates in national, state and some local elections from myNeta was used for the note ...
+Biographical data of national, state and some local elections candidates from [archive.india.gov.in](https://www.archive.india.gov.in/) and [myneta.info](http://www.myneta.info/) along with scripts for retrieving the data. The data from the 15th Lok Sabha and members in Rajya Sabha as of June, 2014 was used to produce this small note: [(No) Missing daughters of Indian Politicians](http://gbytes.gsood.com/2014/06/29/missing-daughters-of-indian-politicians/). While data on all political candidates in national, state and some local elections from myNeta was used to analyze how many male Indian politicians have wives who don't work, how many have wives who earn more than them, share of net worth, income and liabilities that the spouses have, etc.
 
 ----
 ### Table of Contents
@@ -50,32 +50,94 @@ The data were scraped in June, 2014 and November, 2015.
 * [Script](analysis/indiamps.R)
 
 ----
+
 ### Data on All Candidates from myNeta
 
-Select biographical data of national, state and some local elections candidates from [myneta.info](http://myneta.info). The data were scraped in November, 2015.  
+Select biographical and electoral data of national, state and some local elections candidates from [myneta.info](http://myneta.info). The data were scraped in November, 2015. 
 
 #### Get the Data
-To get the data, download the scripts in the [get_data/myneta_info](get_data/myneta_info) folder to your computer. The scripts require `Python 3.x` and `BeautifulSoup 4` to run. The package dependency is listed in [get_data/myneta_info/requirements.txt](get_data/myneta_info/requirements.txt). Once you have installed the dependencies, you can run the scripts.
+There are three scripts. Why three? Information about gender is not provided on candidate pages and is integrated later. The three scripts are:  
+* [india_mps.py](india_mps.py) to download basic profile data.
+* [india_mps_women.py](india_mps_women.py) to get information on gender.
+* [india_mps_gender.py](india_mps_gender.py) to merge gender information into all three CSVs.
 
-1.  To download web pages containing the information, run [scrape_myneta.py](scripts/scrape_myneta.py): 
-	```
-	python scrape_myneta.py
-	```
-	The HTML files will be saved in `./myneta`  
+To begin using the scripts, install the [requirements](requirements.txt). 
 
-2. To parse and extract information from the HTML files, run [extract_myneta.py](scripts/extract_myneta.py)
+Then, on the command line: 
 
-	```
-	python extract_myneta.py <dir>
-	```
-	The script outputs a CSV file, saving it as `dir-out.csv`  
+```
+usage: india_mps.py [-h] [-o OUTPUT] [-n MAX_CONN] [-s FROM_STATE]
+                    [-y FROM_YEAR] [-c FROM_CONSTITUENCY] [-t TYPE]
+                    [--no-header]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o OUTPUT, --output OUTPUT
+                        Output CSV file name
+  -n MAX_CONN, --max-conn MAX_CONN
+                        Max concurrent connections
+  -s FROM_STATE, --from-state FROM_STATE
+                        Start from a specific state
+  -y FROM_YEAR, --from-year FROM_YEAR
+                        Start from a specific election year
+  -c FROM_CONSTITUENCY, --from-constituency FROM_CONSTITUENCY
+                        Start from a specific constituency
+  -t TYPE, --type TYPE  Type (all|state|nation|local)
+  --no-header           Output without header at the first row
+```
+
+#### Example
+
+```
+python india_mps.py -o india-mps-all.csv
+```
+
+#### Get all women candidates
+
+```
+python india_mps_women.py
+```
+
+URL of all women candidates saved as: `output-women.csv`
+
+To merge all candidates with gender, run:
+
+```
+python india_mps_gender.py
+```
 
 #### Data  
-* [All the candidates](data/myneta_data.csv)
+
+**Data** 
+* [Local](data/india-mps-all-local.csv)
+* [State](data/india-mps-all-state.csv)
+* [National](data/india-mps-all-nation.csv)
+* [Combined](data/myneta_data.csv)
+
+**Meta Data**
+* Each row = politician per constituency per election year. 
+* Columns  
+    * Politician Name, Constituency, State, Party, Election Year, Whether They Won or Not, Type: State/National/Local  
+    * Education, Age, Address, Self Profession, Spouse Profession 
+    * Income Tax Return: Self Total Income, Spouse Total Income  
+    * Self Movable Assests, Spouse Movable Assets: 
+      * cash--- for self and spouse  
+      * jewellery --- for self and spouse  
+      * totals --- for self and spouse    
+    * Immovable Assets --- Self Totals, Spouse Totals  
+    * Liabilities      --- Self Totals, Spouse Totals 
+
+**Notes**
+
+There are missing data for election years before 2011: 
+
+* Income Tax Return so no Self/Spouse Total Income
+* No column for Spouse in the Liabilities
 
 #### Analysis 
 * [Script](analysis/indian_netas.R)
 
 ----
+
 ### License
 Scripts, figures, and writing are released under [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). 
