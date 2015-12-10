@@ -10,7 +10,7 @@ from glob import glob
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: %s <dir>" % (__file__))
+        print("Usage: {0!s} <dir>".format((__file__)))
         sys.exit()
 
     data = dict()
@@ -46,7 +46,7 @@ if __name__ == "__main__":
                 #print(td.text)
         # Bio
         try:
-            with open(sys.argv[1] + "/bio-%s.html" % mpcode, encoding='utf-8') as m:
+            with open(sys.argv[1] + "/bio-{0!s}.html".format(mpcode), encoding='utf-8') as m:
                 html = m.read()
         except:
             html = ""
@@ -64,11 +64,11 @@ if __name__ == "__main__":
             elif tds[0].has_attr('align'):
                 rowspan = True
                 # For Loksabha 2015: data[mpcode][cur_key] += "\n%s|%s" % (tds[0].texti, tds[1].text.strip())
-                data[mpcode][cur_key] += "\n%s|%s" % (tds[0].texti.strip(), tds[1].text.strip())
+                data[mpcode][cur_key] += "\n{0!s}|{1!s}".format(tds[0].texti.strip(), tds[1].text.strip())
             if not rowspan:
                 data[mpcode][cur_key] = tds[1].text.strip()
 
-    o = open("%s-out.csv" % sys.argv[1].strip('/'), "wt", encoding='utf-8', newline='')
+    o = open("{0!s}-out.csv".format(sys.argv[1].strip('/')), "wt", encoding='utf-8', newline='')
     writer = csv.DictWriter(o, fieldnames=sorted(list(keys)), dialect='excel')
     writer.writeheader()
     for d in data:
