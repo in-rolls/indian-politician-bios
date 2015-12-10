@@ -15,11 +15,11 @@ BASE_URL = 'http://www.archive.india.gov.in/govt/'
 if __name__ == "__main__":
     scraper = SimpleScraper()
     for h in HOUSE:
-        print("House type: %s" % h)
-        if not os.path.exists('./%s' % h):
-            os.mkdir('./%s' % h)
+        print("House type: {0!s}".format(h))
+        if not os.path.exists('./{0!s}'.format(h)):
+            os.mkdir('./{0!s}'.format(h))
 
-        html = scraper.get(BASE_URL + '%s.php?alpha=all' % h)
+        html = scraper.get(BASE_URL + '{0!s}.php?alpha=all'.format(h))
 
         soup = BeautifulSoup(html)
         i = 0
@@ -32,11 +32,11 @@ if __name__ == "__main__":
                 print(i, link)
                 html2 = scraper.get(BASE_URL + link)
                 if html2:
-                    with open('%s/detail-%s.html' % (h, mpcode), "wb") as f:
+                    with open('{0!s}/detail-{1!s}.html'.format(h, mpcode), "wb") as f:
                         f.write(str.encode(html2))
-                html3 = scraper.get(BASE_URL + '%smpbiodata.php?mpcode=%s' % (h, mpcode))
+                html3 = scraper.get(BASE_URL + '{0!s}mpbiodata.php?mpcode={1!s}'.format(h, mpcode))
                 if html3:
-                    with open('%s/bio-%s.html' % (h, mpcode), "wb") as f:
+                    with open('{0!s}/bio-{1!s}.html'.format(h, mpcode), "wb") as f:
                         f.write(str.encode(html3))
                 #break
-        print("Found: %d" % i)
+        print("Found: {0:d}".format(i))
