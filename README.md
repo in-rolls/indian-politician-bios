@@ -4,10 +4,12 @@ Biographical data of national, state and some local elections candidates from [a
 
 ----
 ### Table of Contents
+
 * [Data on Indian MPs from the 'National Portal of India'](#data-on-indian-mps-from-the-national-portal-of-india)  
   * [Get the Data](#get-the-data)
   * [Data](#data)
   * [Analysis and Write-up](#analysis)
+
 * [Data on All Candidates from myNeta](#data-on-all-candidates-from-myneta)
   * [Get the Data](#get-the-data-1)
   * [Data](#data-1)
@@ -61,9 +63,7 @@ There are three scripts. Why three? Information about gender is not provided on 
 * [india_mps_women.py](india_mps_women.py) to get information on gender.
 * [india_mps_gender.py](india_mps_gender.py) to merge gender information into all three CSVs.
 
-To begin using the scripts, install the [requirements](requirements.txt). 
-
-Then, on the command line: 
+To begin using the scripts, install the [requirements](requirements.txt). Then download the scripts into a folder, and run scripts from the command line. 
 
 ```
 usage: india_mps.py [-h] [-o OUTPUT] [-n MAX_CONN] [-s FROM_STATE]
@@ -108,7 +108,6 @@ python india_mps_gender.py
 
 #### Data  
 
-**Data** 
 * [Local](data/india-mps-all-local.csv)
 * [State](data/india-mps-all-state.csv)
 * [National](data/india-mps-all-nation.csv)
@@ -133,6 +132,7 @@ There are missing data for election years before 2011:
 
 * Income Tax Return so no Self/Spouse Total Income
 * No column for Spouse in the Liabilities
+* In a few elections, multiple candidates with the same name are fighting to get elected from the same constituency. For instance, check [here](http://www.myneta.info/pmc2007/index.php?action=show_candidates&constituency_id=19), [here](http://www.myneta.info/bmc2012/index.php?action=show_candidates&constituency_id=110), [here](http://www.myneta.info/mcd2012/index.php?action=show_candidates&constituency_id=213), [here](http://www.myneta.info/mcd2012/index.php?action=show_candidates&constituency_id=141), [here](http://www.myneta.info/mcd2012/index.php?action=show_candidates&constituency_id=171), and [here](http://www.myneta.info/pmc2007/index.php?action=show_candidates&constituency_id=19).
 
 #### Analysis 
 * [Script](analysis/indian_netas.R)
