@@ -208,20 +208,13 @@ library(plyr) # for ddply
 library(knitr) # knit2html(&quot;analysis/myneta.Rmd&quot;)
 </code></pre>
 
-<pre><code class="r">setwd(githubdir)
-setwd(&quot;indian-politician-bios/&quot;)
+<pre><code class="r">#setwd(githubdir)
+#setwd(&quot;indian-politician-bios/&quot;)
 </code></pre>
 
 <p>Read in data</p>
 
-<pre><code class="r">netas &lt;- read.csv(&quot;data/mynetas.csv&quot;)
-</code></pre>
-
-<pre><code>## Warning in file(file, &quot;rt&quot;): cannot open file &#39;data/mynetas.csv&#39;: No such
-## file or directory
-</code></pre>
-
-<pre><code>## Error in file(file, &quot;rt&quot;): cannot open the connection
+<pre><code class="r">#netas &lt;- read.csv(&quot;data/mynetas.csv&quot;)
 </code></pre>
 
 <p>Female Netas</p>
@@ -269,31 +262,31 @@ netas$prop_immovable &lt;- ifelse(netas$total_immmovable==0, NA, netas$spouse_im
 
 <pre><code class="r"># Try medians also has distribution of proportions is skewed. Ideally density or boxplot it.
 
-# For female politicians, ~ 51% of income earned by income. For male politicians,  just 21.4% of income earned by wife.
+# For female politicians, ~ 53% of income earned by income. For male politicians,  just 21% of income earned by wife.
 ddply(netas, ~gender, summarise, mean=mean(prop_income, na.rm=T))
 </code></pre>
 
 <pre><code>##   gender      mean
-## 1 female 0.5079539
-## 2   male 0.2141935
+## 1 female 0.5288463
+## 2   male 0.2133350
 </code></pre>
 
-<pre><code class="r"># For female politicians, ~ 27% couple&#39;s movable assets owned by husband. When male, 33% owned by wife (think gold)
+<pre><code class="r"># For female politicians, ~ 27% couple&#39;s movable assets owned by husband. When male, ~ 34% owned by wife (think gold)
 ddply(netas, ~gender, summarise, mean=mean(prop_movable, na.rm=T))
 </code></pre>
 
 <pre><code>##   gender      mean
-## 1 female 0.2732813
-## 2   male 0.3377571
+## 1 female 0.2732189
+## 2   male 0.3378002
 </code></pre>
 
-<pre><code class="r"># For female politicians, ~ 41% of couple&#39;s immovable assets owned by husband. For male politicians, 17% owned by wife.
+<pre><code class="r"># For female politicians, ~ 41% of couple&#39;s immovable assets owned by husband. For male politicians, ~ 17% owned by wife.
 ddply(netas, ~gender, summarise, mean=mean(prop_immovable, na.rm=T))
 </code></pre>
 
 <pre><code>##   gender      mean
-## 1 female 0.4125999
-## 2   male 0.1726282
+## 1 female 0.4119150
+## 2   male 0.1724018
 </code></pre>
 
 </body>

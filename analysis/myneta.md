@@ -16,24 +16,15 @@ library(knitr) # knit2html("analysis/myneta.Rmd")
 
 
 ```r
-setwd(githubdir)
-setwd("indian-politician-bios/")
+#setwd(githubdir)
+#setwd("indian-politician-bios/")
 ```
 
 Read in data
 
 
 ```r
-netas <- read.csv("data/mynetas.csv")
-```
-
-```
-## Warning in file(file, "rt"): cannot open file 'data/mynetas.csv': No such
-## file or directory
-```
-
-```
-## Error in file(file, "rt"): cannot open the connection
+#netas <- read.csv("data/mynetas.csv")
 ```
 
 Female Netas
@@ -89,34 +80,34 @@ Spousal income, movable and immovable assets by gender
 ```r
 # Try medians also has distribution of proportions is skewed. Ideally density or boxplot it.
 
-# For female politicians, ~ 51% of income earned by income. For male politicians,  just 21.4% of income earned by wife.
+# For female politicians, ~ 53% of income earned by income. For male politicians,  just 21% of income earned by wife.
 ddply(netas, ~gender, summarise, mean=mean(prop_income, na.rm=T))
 ```
 
 ```
 ##   gender      mean
-## 1 female 0.5079539
-## 2   male 0.2141935
+## 1 female 0.5288463
+## 2   male 0.2133350
 ```
 
 ```r
-# For female politicians, ~ 27% couple's movable assets owned by husband. When male, 33% owned by wife (think gold)
+# For female politicians, ~ 27% couple's movable assets owned by husband. When male, ~ 34% owned by wife (think gold)
 ddply(netas, ~gender, summarise, mean=mean(prop_movable, na.rm=T))
 ```
 
 ```
 ##   gender      mean
-## 1 female 0.2732813
-## 2   male 0.3377571
+## 1 female 0.2732189
+## 2   male 0.3378002
 ```
 
 ```r
-# For female politicians, ~ 41% of couple's immovable assets owned by husband. For male politicians, 17% owned by wife.
+# For female politicians, ~ 41% of couple's immovable assets owned by husband. For male politicians, ~ 17% owned by wife.
 ddply(netas, ~gender, summarise, mean=mean(prop_immovable, na.rm=T))
 ```
 
 ```
 ##   gender      mean
-## 1 female 0.4125999
-## 2   male 0.1726282
+## 1 female 0.4119150
+## 2   male 0.1724018
 ```

@@ -135,7 +135,7 @@ There are missing data for election years before 2011:
 * In a few elections, multiple candidates with the same name are fighting to get elected from the same constituency. For instance, check [here](http://www.myneta.info/pmc2007/index.php?action=show_candidates&constituency_id=19), [here](http://www.myneta.info/bmc2012/index.php?action=show_candidates&constituency_id=110), [here](http://www.myneta.info/mcd2012/index.php?action=show_candidates&constituency_id=213), [here](http://www.myneta.info/mcd2012/index.php?action=show_candidates&constituency_id=141), [here](http://www.myneta.info/mcd2012/index.php?action=show_candidates&constituency_id=171), and [here](http://www.myneta.info/pmc2007/index.php?action=show_candidates&constituency_id=19).
 
 #### Analysis 
-* [Script](analysis/indian_netas.R)
+* [Script](analysis/myneta.R)
 
 ----
 
