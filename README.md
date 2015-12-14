@@ -49,7 +49,7 @@ The data were scraped in June, 2014 and November, 2015.
 **Note:** In 2015, the list of Rajya Sabha members on the site appears to differ slightly from the [list](data/rajyasabha_rajyasabha_in_nov_2015.csv) posted on [http://rajyasabha.nic.in/](http://rajyasabha.nic.in/).  
 
 #### Analysis 
-* [Script](analysis/indiamps.R)
+* [Script](analysis/india_mps.R)
 
 ----
 
